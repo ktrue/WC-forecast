@@ -90,7 +90,7 @@ $lang = 'en';                          // default language ='en' for English
 <dt>**$WCAPIkey = 'specify-for-standalone-use-here';**</dt>
 
 <dd>This setting is for **standalone** use (do not change this for Saratoga templates).  
-Register for a WU/TWC API Key at **[https://www.wunderground.com/member/api-keys](https://www.wunderground.com/member/api-keys)** and replace _specify-for-standalone-use-here_i> with the registered API key. The script will nag you if this has not been done.  
+Register for a WU/TWC API Key at https://www.wunderground.com/member/api-keys and replace _specify-for-standalone-use-here_i> with the registered API key. The script will nag you if this has not been done.  
 
 **For Saratoga template users**, do the registration at the WU API site above, then put your API key in your _Settings.php_ as:  
 
