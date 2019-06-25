@@ -94,7 +94,7 @@ Register for a WU/TWC API Key at https://www.wunderground.com/member/api-keys an
 
 **For Saratoga template users**, do the registration at the WU API site above, then put your API key in your _Settings.php_ as:  
 
-$SITE['WUAPIkey'] = '_your-key-here_';  
+$SITE['WCAPIkey'] = '_your-key-here_';  
 
 to allow easy future updates of the WC-forecast.php script by simple replacement.</dd>
 
