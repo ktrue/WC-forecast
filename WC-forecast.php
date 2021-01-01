@@ -1,6 +1,6 @@
 <?php 
 // WC-forecast.php script by Ken True - webmaster@saratoga-weather.org
-//  Based on WU-forecast.php V3.05 - 13-Jun-2018 and rewritten to use the new WeatherUnderground api.weather.com
+//  Based on WC-forecast.php V3.05 - 13-Jun-2018 and rewritten to use the new WeatherUnderground api.weather.com
 //    json data 5 day forecast to replace the deprecated weatherunderground.com API which
 //    was turned off in March, 2019.
 //
@@ -9,8 +9,9 @@
 // Version 1.02 - 04-Mar-2019 - rewrote icon printing for clairity and Day-over-Night display option
 // Version 1.03 - 10-Mar-2019 - added displays for all available icons in day-over-night mode
 // Version 1.04 - 22-Mar-2019 - fix TWC/WU JSON degree sign \xc2\xba to correct UTF-8 \xc2\xb0
+// Version 1.05 - 01-Jan-2021 - fix for PoP icon displays
 //
-$Version = "WC-forecast.php (ML) Version 1.04 - 22-Mar-2019";
+$Version = "WC-forecast.php (ML) Version 1.05 - 01-Jan-2021";
 //
 // error_reporting(E_ALL);  // uncomment to turn on full error reporting
 //
@@ -521,7 +522,7 @@ $firstIconPeriod = '';
       $Status .= "<!-- forecastcond[$n]='" . $WCforecastcond[$n] . "' -->\n";
 	  }
 
-	$WCforecasticon[$n] = WC_img_replace($FCpart['iconCode'][$i],$dayOrNight,$WCforecastcond[$n],$WCforecastpop[$n]);
+	$WCforecasticon[$n] = WC_img_replace($FCpart['iconCode'][$i],$dayOrNight,$WCforecastcond[$n],round($WCforecastpop[$n],-1)); // V1.05 fix
 	
 	if ($doDebug) {
       $Status .= "<!-- WCforecasticon[$n]='" . $WCforecasticon[$n] . "' -->\n";
